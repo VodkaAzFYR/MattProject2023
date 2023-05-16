@@ -9,6 +9,8 @@ while True:
         client, addr = s.accept()
         print(f"CONNECTED WITH {addr[0]}")
 
+        send_message(client, 'Connected with server!')
+
         input_user = receive_message(client)
         curr_number = [int(x) for x in generate_numbers().split(',')]
         guess = [int(x) for x in input_user.split(',')]
@@ -28,7 +30,7 @@ while True:
             send_message(client, history)
 
         else:
-            response = 'You lost!'
+            response = 'You lost! again losser'
             send_message(client, response)
             add_to_history(guess, curr_number)
             with open(r'./history.txt', 'r') as file:
@@ -36,3 +38,4 @@ while True:
             send_message(client, history)
 
     s.close()
+    vvhvhjvhjvhj
