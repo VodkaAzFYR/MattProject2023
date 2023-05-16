@@ -3,3 +3,6 @@ Gra w lotto
 Klijent łączy się z serwerem, który nasłuchuje gracza.
 Po połączeniu gracz może wybrać czy chce wpisać liczby czy chce wybrać losowe liczby (l - losowanie, w - wpisywanie)
 Po otrzymaniu liczby klient wysyła liczby do serwera,
+
+
+dadadadwawadwawdwada
