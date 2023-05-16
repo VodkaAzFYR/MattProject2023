@@ -38,4 +38,4 @@ while True:
             send_message(client, history)
 
     s.close()
-    vvhvhjvhjvhj
+    
