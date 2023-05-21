@@ -1,6 +1,6 @@
 import random
 import time
-
+from errors import *
 def add_to_history(chosen, win):
     choosenstr = ''
     winstr = ''
@@ -33,7 +33,31 @@ def generate_numbers():
         generated_numbers += str(i) + ","
     return generated_numbers[:-1]
 
+
+def generate_request(numbers=None, play_mode=None, mode="g", message=None):
+    request = ""
+    if mode == "g":
+        request += r"PLAY\r\n"
+        if play_mode == "l":
+            request += r"-r\r\n"
+        elif play_mode == "w":
+            request += "-f"
+        else:
+            raise InvalidModeException
+        if numbers == "":
+            raise InvalidNumbersException
+        elif len(numbers.split(",")) < 6:
+            raise InvalidNumbersException
+        else:
+            request += f"-n{numbers}"
+    if mode == "s":
+        request += r"SEND\r\n"
+        request += f"-m{message}"
+    return request
+
+
 # print(generate_numbers())
+# print(generate_request(mode="g", numbers="1,2,3,4,5,6", play_mode="w"))
 
 ip = '127.0.0.1'
 port = 12139
