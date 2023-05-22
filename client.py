@@ -43,7 +43,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server:
     result = result.split(r"\r\n")[-1][2:]
     print(result)
 
-    if input("Pokazać historie[N/Y]").lower() == "y":
+    if input("Pokazać historie [N/Y]").lower() == "y":
         print('Historia losowań:')
         print(receive_message(server))
     server.close()

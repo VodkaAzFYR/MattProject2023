@@ -37,18 +37,17 @@ def send_message(sock, message):
 def pi_generator():
     r_pi = linecache.getline("./pi_numbers.txt", random.randrange(0, 1104058))
     return int(r_pi)
+
 def generate_numbers():
     seed = int(time.time() * pi_generator())//pi_generator()
-    a = pi_generator()
     c = 12345
     m = 2**31
     generated_numbers = ""
     for _ in range(6):
-        seed = (a * seed + c) % m
-        liczba = 1 + (seed % 50)
+        seed = (pi_generator() * seed + c) % m
+        liczba = int(str(pi_generator())[0]) + (seed % 50)
         generated_numbers += str(liczba) + ","
     return generated_numbers[:-1]
-
 
 
 
