@@ -1,6 +1,15 @@
 Gra w lotto
 
-Klijent łączy się z serwerem, który nasłuchuje gracza.
+Klient łączy się z serwerem, który nasłuchuje gracza.
+Serwer wysyła request powitalny protokołem SEND
+Klient odpowiada protokołem SEND
 Po połączeniu gracz może wybrać czy chce wpisać liczby czy chce wybrać losowe liczby (l - losowanie, w - wpisywanie)
-Po otrzymaniu liczby klient wysyła liczby do serwera,
+Klient wysyła protokół PLAY z danymi potrzebnymi do gry
+Serwer odbiera zapytanie graczy i z wysłanych danych odzyskuje wybrane liczby
+Serwer porównuje liczby wybrane przez gracza i wygrywające (generowane losowo).
+Serwer zapisuje dane do historii (pliku history.txt)
+Następnie serwer wysyła rezultat gry clientowi protokołem SEND
+Server wysyła również dane z history klientowi protokołem SEND
+Jeśli klient zdecyduje o wyświetleniu danych historii, dane zostają wyświetlone w konsoli
+Klient zamyka połączenie
 
