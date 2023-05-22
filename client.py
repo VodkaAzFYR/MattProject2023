@@ -40,6 +40,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server:
     send_message(sock=server, message=request)
 
     result = receive_message(server)
+    result = result.split(r"\r\n")[-1][2:]
     print(result)
 
     if input("Pokazać historie[N/Y]").lower() == "y":
